@@ -1,5 +1,9 @@
 FROM oven/bun:alpine AS base
 
+# Set up shared 'srv' group
+ARG SRV_GROUP_ID
+RUN groupadd -g $SRV_GROUP_ID srv
+
 # Set the working directory
 WORKDIR /app
 
