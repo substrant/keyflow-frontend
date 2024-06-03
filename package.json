@@ -1,16 +1,16 @@
 {
   "name": "keyflow-frontend",
-  "private": true,
-  "type": "module",
   "version": "0.0.1",
+  "dependencies": {
+    "astro": "^4.7.1",
+    "@astrojs/check": "^0.5.10",
+    "typescript": "^5.4.5"
+  },
+  "private": true,
   "scripts": {
     "dev": "astro dev --port 8443 --host 0.0.0.0",
     "build": "astro check && astro build",
     "deploy": "rm -rf /var/www/* && cp -r ./www/. /var/www"
   },
-  "dependencies": {
-    "astro": "^4.7.1",
-    "@astrojs/check": "^0.5.10",
-    "typescript": "^5.4.5"
-  }
+  "type": "module"
 }
