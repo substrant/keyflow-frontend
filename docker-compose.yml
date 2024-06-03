@@ -5,6 +5,8 @@ services:
       target: "${TARGET:-prod}"
     container_name: frontend
     hostname: frontend.lan
+    group_add:
+      - srv
     networks:
       - infra
     volumes:
