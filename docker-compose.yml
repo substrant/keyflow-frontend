@@ -1,0 +1,17 @@
+services:
+  frontend:
+    build:
+      context: .
+      target: "${TARGET:-prod}"
+    container_name: frontend
+    hostname: frontend.lan
+    networks:
+      - infra
+    volumes:
+      - "/srv/keyflow-nginx/www/www.keyflow.systems:/var/www"
+    depends_on:
+      - nginx
+
+networks:
+  infra:
+    external: true
