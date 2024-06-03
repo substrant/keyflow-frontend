@@ -6,9 +6,6 @@ WORKDIR /app
 # Setup srv group for root
 RUN addgroup srv && adduser root srv
 
-# Set up owner/group rw and srv group for shared folders
-RUN mkdir -p /var/www && chown -R root:srv /var/www && chmod -R 770 /var/www
-
 ##########################################################################################
 
 ### Install dependencies into a temporary directory ###
