@@ -3,6 +3,8 @@ services:
     build:
       context: .
       target: "${TARGET:-prod}"
+      args:
+        - SRV_GROUP_ID=${SRV_GROUP_ID}
     container_name: frontend
     hostname: frontend.lan
     group_add:
