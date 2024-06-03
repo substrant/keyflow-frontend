@@ -9,6 +9,7 @@ services:
       - infra
     volumes:
       - "/srv/keyflow-nginx/www/www.keyflow.systems:/var/www"
+      - "/srv/keyflow-nginx/certs/www.keyflow.systems:/app/certs"
     depends_on:
       - nginx
 
