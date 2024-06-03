@@ -3,9 +3,6 @@ FROM oven/bun:alpine AS base
 # Set the working directory
 WORKDIR /app
 
-# Setup srv group for root
-RUN addgroup srv && adduser root srv
-
 ##########################################################################################
 
 ### Install dependencies into a temporary directory ###

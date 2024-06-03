@@ -10,7 +10,7 @@
   "scripts": {
     "dev": "astro dev --host 0.0.0.0 --port 8443",
     "build": "astro check && astro build",
-    "deploy": "rm -rf /var/www/* && cp -r ./www/. /var/www && chown -R root:srv /var/www && chmod -R 770 /var/www"
+    "deploy": "rm -rf /var/www/* && cp -r ./www/. /var/www && chgrp -R srv /var/www && chmod -R 770 /var/www"
   },
   "type": "module"
 }
