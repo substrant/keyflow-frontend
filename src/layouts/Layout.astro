@@ -21,13 +21,12 @@ const { title } = Astro.props;
 	</head>
 	<body>
 		<slot />
-		<ToTopButton text="Back to top"/>
+		<ToTopButton />
 	</body>
 </html>
 
 <!-- Global styles -->
 <style is:global>
-	
 	body {
 		font-family: system-ui, sans-serif;
 		background: rgb(var(--background));

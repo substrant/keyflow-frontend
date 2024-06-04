@@ -5,11 +5,11 @@ export default defineConfig({
     publicDir: "./static",
     outDir: "./www",
     vite: {
-        server: {
+        /*server: {
             https: {
                 cert: "./certs/cert.pem",
                 key: "./certs/key.pem"
             }
-        }
+        }*/
     }
 });
