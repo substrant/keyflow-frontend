@@ -4,12 +4,18 @@ FROM oven/bun:alpine AS base
 ARG SRV_GROUP_ID
 RUN addgroup -g $SRV_GROUP_ID srv
 
+# Install shadow for group management
+RUN apk add --no-cache shadow
+
 # Assign default group to root and bun
-RUN /usr/sbin/usermod -g srv root
-RUN /usr/sbin/usermod -g srv bun
+RUN usermod -g srv root
+RUN usermod -g srv bun
 
 # Set the working directory
 WORKDIR /app
+
+# Clear cache
+RUN rm -rf /var/cache/apk/*
 
 ##########################################################################################
 
