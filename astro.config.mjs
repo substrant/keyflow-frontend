@@ -7,8 +7,8 @@ export default defineConfig({
     vite: {
         server: {
             https: {
-                cert: "./certs/cert.crt",
-                key: "./certs/cert.key"
+                cert: "./certs/cert.pem",
+                key: "./certs/key.pem"
             }
         }
     }
