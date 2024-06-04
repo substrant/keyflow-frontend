@@ -1,0 +1,37 @@
+name: Deploy Application
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: [self-hosted, linux]
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+      with: 
+        sparse-checkout: deploy.sh
+        sparse-checkout-cone-mode: false
+
+    - name: Install OpenSSH
+      run: apt-get update && apt-get install -y openssh-client
+
+    - name: Setup SSH
+      run: |
+        mkdir -p ~/.ssh
+        echo "${{ secrets.SSH_KEY }}" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        ssh-keyscan -p ${{ secrets.SSH_PORT }} -t ed25519 ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+
+    - name: Deploy Application
+      run: |
+        tmp_name="$(mktemp).sh"
+
+        echo "Copying deploy script to remote server..."
+        scp -P ${{ secrets.SSH_PORT }} deploy.sh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${tmp_name}
+        
+        echo "Executing deploy script on remote server..."
+        ssh -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "bash ${tmp_name}; rm ${tmp_name}"
