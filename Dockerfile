@@ -5,8 +5,8 @@ ARG SRV_GROUP_ID
 RUN addgroup -g $SRV_GROUP_ID srv
 
 # Assign default group to root and bun
-RUN usermod -g srv root
-RUN usermod -g srv bun
+RUN /usr/sbin/usermod -g srv root
+RUN /usr/sbin/usermod -g srv bun
 
 # Set the working directory
 WORKDIR /app
