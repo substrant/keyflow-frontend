@@ -1,0 +1,86 @@
+---
+interface Props {}
+
+const {} = Astro.props;
+---
+
+<header class="header frosted-glass">
+    <a href="#" class="logo"><span class="text-gradient">Keyflow</span></a>
+    <nav class="navbar">
+        <a href="#">Home</a>
+        <a href="#">Features</a>
+        <a href="#">Pricing</a>
+        <a href="#">Contact</a>
+        <a href="#">About</a>
+        <a href="#">Blog</a>
+    </nav>
+</header>
+
+<style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: "Poppins", sans-serif;
+    }
+
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4rem;
+        padding: 20px 100px;
+        background: transparent !important;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 100 !important;
+    }
+
+    .logo {
+        font-size: 32px;
+        font-weight: 700;
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .navbar a {
+        position: relative;
+        font-size: 18px;
+        font-weight: 500;
+        color: #fff;
+        text-decoration: none;
+        margin-left: 40px;
+    }
+
+    .navbar a::before {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: #fff;
+        transition: 0.25s;
+    }
+
+    .navbar a:hover::before {
+        width: 100%;
+    }
+
+    .frosted-glass {
+        background-color: linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.1),
+            rgba(255, 255, 255, 0.1)
+        );
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    }
+</style>

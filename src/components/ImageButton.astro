@@ -6,35 +6,31 @@ interface Props {
     href?: string;
 }
 
-const { image, text, backColor = "#000077", href } = Astro.props;
+const { image, text, backColor = "#dc143c", href } = Astro.props;
 ---
 
 <a href={href}>
-    <button>
+    <button class="image-button">
         <img src={image} alt={text} />
         {text}
     </button>
 </a>
 
 <style>
-    button {
-        position: relative;
-        border-radius: 20px;
-        border: solid 0px white;
-        min-width: 80px;
-        height: 35px;
-        background-color: backColor;
-        color: white;
-        text-align: center;
-        /*box-shadow: 1px 1px 1px 1px #1f1d1d;*/
-        outline: 0px;
-        transition: all 200ms;
-        cursor: pointer;
-        padding: 0.5rem 1rem;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        display: inline-block;
-        overflow: visible;
+    .image-button {
+        display: inline-flex; /* Use flexbox for inline layout */
+        align-items: center; /* Align items vertically */
+        text-decoration: none; /* Remove default underline */
+    }
+
+    img {
+        width: 24px; /* Adjust width of the icon */
+        height: 24px; /* Adjust height of the icon */
+        margin-right: 5px; /* Add spacing between icon and text */
+    }
+
+    span {
+        font-size: 14px; /* Adjust font size of the text */
+        color: white; /* Text color */
     }
 </style>

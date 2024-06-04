@@ -1,5 +1,6 @@
 ---
 import ImageButton from "../components/ImageButton.astro";
+import ToTopButton from "../components/ToTopButton.astro";
 
 interface Props {
 	title: string;
@@ -20,12 +21,13 @@ const { title } = Astro.props;
 	</head>
 	<body>
 		<slot />
-		<ImageButton image="/icon_shield.svg" href="#" />
+		<ToTopButton text="Back to top"/>
 	</body>
 </html>
 
 <!-- Global styles -->
 <style is:global>
+	
 	body {
 		font-family: system-ui, sans-serif;
 		background: rgb(var(--background));

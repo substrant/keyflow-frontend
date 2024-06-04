@@ -1,80 +1,80 @@
 ---
 interface Props {
-  glows: boolean; // Optional prop for adding a glowing effect (default: true)
-  text: string; // Required prop for button text
-  color: string; // Optional prop for button color (default: #000077)
+    glows: boolean; // Optional prop for adding a glowing effect (default: true)
+    text: string; // Required prop for button text
+    color: string; // Optional prop for button color (default: #000077)
 }
 
 const { glows = true, text, color = "#000077" } = Astro.props;
 ---
 
 <button class="button">
-  {text}
+    {text}
 </button>
 
 <style>
   .button {
-    position: relative;
-    border-radius: 20px;
-    border: solid 0px white; /* Remove border for consistent width */
-    min-width: 80px; /* Set minimum width */
-    height: 35px; /* Set button height */
-    background-color: #0a0a1a;
-    color: white;
-    text-align: center;
-    /*box-shadow: 1px 1px 1px 1px #1f1d1d;*/
-    outline: 0px;
-    transition: all 200ms;
-    cursor: pointer;
-    padding: 0.5rem 1rem; /* Adjust padding as needed */
-    white-space: nowrap; /* Prevent text wrapping within button */
-    overflow: hidden; /* Hide overflowing text */
-    text-overflow: ellipsis; /* Add ellipsis for long text */
-    display: inline-block;
-    overflow: visible;
+      position: relative;
+      border-radius: 20px;
+      border: solid 0px white;
+      min-width: 80px;
+      height: 35px;
+      background-color: #0a0a1a;
+      color: white;
+      text-align: center;
+      /*box-shadow: 1px 1px 1px 1px #1f1d1d;*/
+      outline: 0px;
+      transition: all 200ms;
+      cursor: pointer;
+      padding: 0.5rem 1rem;
+      white-space: nowrap;
+      overflow: hidden; /* Hide overflowing text */
+      text-overflow: ellipsis; /* Add ellipsis for long text */
+      display: inline-block;
+      overflow: visible;
   }
 
   .button::before,
   .button::after {
-    content: "";
-    position: absolute;
-    border-radius: 20px;
-    left: -2px;
-    top: -2px;
-    background: linear-gradient(
-      45deg,
-      #ffd700,
-      #00ffd7,
-      #ffa500,
-      #ff6f00,
-      #ff6347,
-      #adff2f,
-      #00ffff,
-      #ffd7cb,
-      #ffc0cb,
-      #ff69b4
-    );
-    background-size: 400%;
-    width: calc(100% + 5px);
-    height: calc(100% + 5px);
-    z-index: -1;
-    opacity: 1;
-    animation: animate 20s linear infinite;
+      content: "";
+      position: absolute;
+      border-radius: 20px;
+      left: -2px;
+      top: -2px;
+      background: linear-gradient(
+          45deg,
+          #ffd700,
+          #00ffd7,
+          #ffa500,
+          #ff6f00,
+          #ff6347,
+          #adff2f,
+          #00ffff,
+          #ffd7cb,
+          #ffc0cb,
+          #ff69b4
+      );
+      background-size: 400%;
+      width: calc(100% + 5px);
+      height: calc(100% + 5px);
+      z-index: -1;
+      opacity: 1;
+      animation: animate 20s linear infinite;
   }
 
   @keyframes animate {
-    0% {
-      background-position: 0 0;
-    }
-    50% {
-      background-position: 400% 0;
-    }
-    100% {
-      background-position: 0 0;
-    }
+      0% {
+          background-position: 0 0;
+      }
+      50% {
+          background-position: 400% 0;
+      }
+      100% {
+          background-position: 0 0;
+      }
   }
 
   .button::after {
-    filter: blur(40px);
+      filter: blur(10px);
   }
 </style>
