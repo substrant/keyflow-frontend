@@ -12,7 +12,7 @@ services:
     networks:
       - infra
     volumes:
-      - "frontend_wwwroot:/app/www"
+      - "frontend_wwwroot:/var/www"
       - "frontend_certs:/app/certs"
     stop_signal: SIGKILL
 
