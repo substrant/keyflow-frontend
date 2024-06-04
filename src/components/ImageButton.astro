@@ -1,0 +1,40 @@
+---
+interface Props {
+    image: string;
+    text?: string;
+    backColor?: string;
+    href?: string;
+}
+
+const { image, text, backColor = "#000077", href } = Astro.props;
+---
+
+<a href={href}>
+    <button>
+        <img src={image} alt={text} />
+        {text}
+    </button>
+</a>
+
+<style>
+    button {
+        position: relative;
+        border-radius: 20px;
+        border: solid 0px white;
+        min-width: 80px;
+        height: 35px;
+        background-color: backColor;
+        color: white;
+        text-align: center;
+        /*box-shadow: 1px 1px 1px 1px #1f1d1d;*/
+        outline: 0px;
+        transition: all 200ms;
+        cursor: pointer;
+        padding: 0.5rem 1rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: inline-block;
+        overflow: visible;
+    }
+</style>

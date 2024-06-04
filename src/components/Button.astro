@@ -8,11 +8,9 @@ interface Props {
 const { glows = true, text, color = "#000077" } = Astro.props;
 ---
 
-<li>
-  <button class="button">
-    {text}
-  </button>
-</li>
+<button class="button">
+  {text}
+</button>
 
 <style>
   .button {

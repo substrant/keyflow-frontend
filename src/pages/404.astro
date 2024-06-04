@@ -1,0 +1,34 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const title = "404 - Page Not Found";
+---
+
+<Layout title={title}>
+    <main>
+        <div class="center">
+            <h1><span class="text-gradient">404</span></h1>
+            <p>Page Not Found</p>
+        </div>
+    </main>
+</Layout>
+
+<style>
+    main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        text-align: center;
+    }
+    
+    h1 {
+        font-size: 6rem;
+        color: #007bff;
+    }
+
+    p {
+        font-size: 1.5rem;
+        color: #333;
+    }
+</style>
