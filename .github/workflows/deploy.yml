@@ -17,7 +17,7 @@ jobs:
         sparse-checkout-cone-mode: false
 
     - name: Install OpenSSH
-      run: apt-get update && apt-get install -y openssh-client
+      run: sudo apt-get update && sudo apt-get install -y openssh-client
 
     - name: Setup SSH
       run: |
