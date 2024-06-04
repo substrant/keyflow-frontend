@@ -78,6 +78,30 @@ const { title } = Astro.props;
 		})();
 	</script>
 
+	<script
+		is:inline
+		type="text/javascript"
+		async
+		src="https://appsha-prm.ctengine.io/js/script.js?wkey=l2QVVMo45j"
+	></script>
+
+	<iframe
+		data-aa="2329685"
+		src="//ad.a-ads.com/2329685?size=970x250"
+		style="width:970px; height:250px; border:0px; padding:0; overflow:hidden; background-color: transparent;"
+	></iframe>
+
+	<div id="frame" style="width:320px;">
+		<iframe
+			data-aa="2329689"
+			src="//ad.a-ads.com/2329689?size=320x50"
+			style="width:320px; height:50px; border:0px; padding:0; overflow:hidden; background-color: transparent;"
+		></iframe><a
+			style="display: block; text-align: right; font-size: 12px"
+			id="preview-link"
+			href="https://a-ads.com/?partner=2329689">Advertise here</a>
+	</div>
+
 	<meta charset="UTF-8" />
 	<meta name="description" content="Astro description" />
 	<meta name="viewport" content="width=device-width" />
@@ -88,73 +112,75 @@ const { title } = Astro.props;
 	<body>
 		<slot />
 	</body>
+
+	<!-- Global styles -->
+	<style is:global>
+		body {
+			font-family: system-ui, sans-serif;
+			background: rgb(var(--background));
+			background-size: 224px;
+			position: relative;
+		}
+
+		:root {
+			--background: 4, 4, 11;
+			--accent: 114, 115, 203;
+			--accent-light: 224, 204, 250;
+			--accent-dark: 49, 10, 101;
+			--accent-gradient: linear-gradient(
+				45deg,
+				rgb(var(--accent)),
+				rgb(var(--accent-light)) 30%,
+				white 60%
+			);
+		}
+
+		html {
+			scroll-behavior: smooth;
+			scrollbar-width: none;
+		}
+
+		code {
+			font-family:
+				Menlo,
+				Monaco,
+				Lucida Console,
+				Liberation Mono,
+				DejaVu Sans Mono,
+				Bitstream Vera Sans Mono,
+				Courier New,
+				monospace;
+		}
+
+		.text-gradient {
+			background-image: var(--accent-gradient);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			background-size: 400%;
+			background-position: 0%;
+		}
+	</style>
+
+	<!-- Private styles -->
+	<style>
+		.back-to-top {
+			position: fixed;
+			bottom: 2rem;
+			right: 2rem;
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			background-color: #dc143c;
+			border-radius: 0.5rem;
+			padding: 0.5rem;
+		}
+
+		.back-to-top span {
+			color: #fff;
+			font-size: 3rem;
+			transition: 0.2s ease-out;
+		}
+	</style>
+
+
 </html>
-
-<!-- Global styles -->
-<style is:global>
-	body {
-		font-family: system-ui, sans-serif;
-		background: rgb(var(--background));
-		background-size: 224px;
-		position: relative;
-	}
-
-	:root {
-		--background: 4, 4, 11;
-		--accent: 114, 115, 203;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-
-	html {
-		scroll-behavior: smooth;
-		scrollbar-width: none;
-	}
-
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
-
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-</style>
-
-<!-- Private styles -->
-<style>
-	.back-to-top {
-		position: fixed;
-		bottom: 2rem;
-		right: 2rem;
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		background-color: #dc143c;
-		border-radius: 0.5rem;
-		padding: 0.5rem;
-	}
-
-	.back-to-top span {
-		color: #fff;
-		font-size: 3rem;
-		transition: 0.2s ease-out;
-	}
-</style>
