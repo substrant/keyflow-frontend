@@ -1,3 +1,23 @@
 {
-  "extends": "astro/tsconfigs/strict"
+  "extends": "astro/tsconfigs/strict",
+  "compilerOptions": {
+    "rootDir": "./",
+    "baseUrl": "./",
+    "paths": {
+      // Idk why but i need to do this stupid hack to make resolution work for index.ts
+      // Basically just defining an absolute then globbed path.
+
+      "@components": ["./src/components"], // this is some wizard bitchcraft here
+      "@components/*": ["./src/components/*"],
+
+      "@layouts": ["./src/layouts"],
+      "@layouts/*": ["./src/layouts/*"],
+
+      "@pages": ["./src/pages"],
+      "@pages/*": ["./src/pages/*"],
+
+      "@styles": ["./src/styles"],
+      "@styles/*": ["./src/styles/*"],
+    }
+  }
 }
