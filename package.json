@@ -12,5 +12,8 @@
     "build": "astro check && astro build",
     "deploy": "rm -rf /var/www/* && cp -r ./www/. /var/www && chgrp -R srv /var/www && chmod -R 770 /var/www"
   },
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "sass": "^1.77.4"
+  }
 }
