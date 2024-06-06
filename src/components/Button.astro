@@ -1,11 +1,9 @@
 ---
 interface Props {
-    glows: boolean; // Optional prop for adding a glowing effect (default: true)
     text: string; // Required prop for button text
-    color: string; // Optional prop for button color (default: #000077)
 }
 
-const { glows = true, text, color = "#000077" } = Astro.props;
+const { text } = Astro.props;
 ---
 
 <button class="button">

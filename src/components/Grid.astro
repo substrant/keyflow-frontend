@@ -1,0 +1,42 @@
+---
+interface Props {
+    cols?: string;
+    cols_wrap?: string;
+    minHeight?: string;
+    maxHeight?: string;
+}
+
+const {
+    cols = "2",
+    cols_wrap = "1",
+    minHeight = "none",
+    maxHeight = "none",
+} = Astro.props;
+---
+
+<ul role="list" class="grid">
+    <slot />
+</ul>
+
+<style lang="scss" define:vars={{ cols, cols_wrap, minHeight, maxHeight }}>
+    @import "@styles/mixins/grid";
+
+    .grid {
+        @include grid;
+
+        flex-wrap: wrap;
+        justify-content: center;
+
+        > :global(li) {
+            width: calc(calc(100% / var(--cols)) - 1rem);
+            @media (max-width: 768px) {
+                width: calc(calc(100% / var(--cols_wrap)) - 1rem);
+            }
+        }
+
+        > :global(li) {
+            min-height: var(--minHeight);
+            max-height: var(--maxHeight);
+        }
+    }
+</style>

@@ -1,0 +1,26 @@
+@import "@styles/colors.scss";
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
+
+html {
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+body {
+    font-family: system-ui, sans-serif;
+    background: $background;
+    margin: 0;
+}
+
+code {
+    font-family: Jetbrains Mono, monospace;
+    
+    &.inline {
+        font-size: 0.8em;
+        border-radius: 4px;
+        padding: 0.3em 0.4em;
+        font-weight: bold;
+        background: color-mix(in srgb, $accent-light, transparent 88%);
+        color: $accent-light;
+    }
+}

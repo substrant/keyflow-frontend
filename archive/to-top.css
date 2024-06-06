@@ -1,0 +1,17 @@
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #dc143c;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+}
+
+.back-to-top span {
+    color: #fff;
+    font-size: 3rem;
+    transition: 0.2s ease-out;
+}

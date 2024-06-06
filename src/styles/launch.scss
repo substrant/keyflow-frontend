@@ -1,0 +1,143 @@
+@import "../styles/colors.scss";
+
+main {
+    margin: auto;
+    padding: 1rem;
+    width: 800px;
+    max-width: calc(100% - 2rem);
+    color: rgb(248, 248, 252);
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+span.gradient {
+    background-image: $accent-gradient;
+    background-clip: text;
+    color: transparent;
+    background-size: 400%;
+    background-position: 0%;
+}
+
+.subtext { color: gray; }
+
+main > * { margin: 5rem 0; }
+
+h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+.top-bar > a {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    border-radius: 8px;
+    min-width: 60px; /* Set minimum width */
+    height: 20px; /* Set button height */
+    background-color: transparent !important;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    color: white;
+    text-align: center;
+    /*box-shadow: 1px 1px 1px 1px #1f1d1d;*/
+    padding: 0.5rem 1rem; /* Adjust padding as needed */
+    white-space: nowrap; /* Prevent text wrapping within button */
+    overflow: hidden; /* Hide overflowing text */
+    text-overflow: ellipsis; /* Add ellipsis for long text */
+    text-decoration: none;
+}
+
+.glass {
+    background-color: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0.1)
+    );
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Increase shadow size and blur for more depth */
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Increase text shadow size for better contrast */
+}
+
+.color {
+    height: 1000px;
+    width: 1000px;
+    background-image: radial-gradient(closest-side, rgba(255, 255, 50, 1));
+    position: absolute;
+    top: -570px;
+    left: 15%;
+}
+
+.full-center {
+    width: 100%;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    justify-content: center; /* Center items horizontally */
+    margin-top: 4rem;
+}
+
+.image-container {
+    flex: 1; /* Let the image container grow to fill the available space */
+    max-width: 50%;
+}
+
+.image-container img {
+    max-width: 100%; /* Ensure the image doesn't exceed the container's width */
+    height: auto;
+}
+
+.text-container {
+    flex: 1; /* Let the text container grow to fill the available space */
+    padding: 0 20px;
+    text-align: left;
+}
+
+.text-container h1 {
+    font-size: 2em;
+    margin: 0;
+    text-align: left;
+}
+
+.text-container .highlight {
+    color: #00aaff;
+}
+
+.text-container p {
+    font-size: 1.2em;
+    margin-top: 10px;
+    text-align: left;
+}
+
+.instructions {
+    margin-bottom: 2rem;
+    border: 1px solid color-mix(in srgb, $accent-light, transparent 75%);
+    background: linear-gradient(
+        color-mix(in srgb, $accent-dark, transparent 67%),
+        color-mix(in srgb, $accent-dark, transparent 34%)
+    );
+    padding: 1rem;
+    border-radius: 8px;
+
+    strong { color: $accent-light; }
+}
+

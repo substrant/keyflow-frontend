@@ -1,0 +1,61 @@
+---
+interface Props {
+    image: string;
+    imgPos?: string;
+}
+
+const { image, imgPos = "left" } = Astro.props;
+---
+
+<div class="hero">
+    {
+        imgPos.toLowerCase() === "right" && (
+            <div class="text-container">
+                <slot />
+            </div>
+        )
+    }
+    <div class="image-container">
+        <img src={image} alt="kf_hero_image" />
+    </div>
+    <!-- it works take a look -->
+    {
+        imgPos.toLowerCase() === "left" && (
+            <div class="text-container">
+                <slot />
+            </div>
+        )
+    }
+</div>
+
+<style lang="scss">
+    .hero {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 4rem; // might wanna make this in the *{}
+    }
+
+    .text-container {
+        flex: 1;
+        padding: 0 20px;
+        text-align: left;
+
+        h1 {
+            font-size: 2em;
+        }
+        p {
+            font-size: 1.2em;
+            margin-top: 10px;
+            color: gray;
+        }
+    }
+
+    .img-container {
+        flex: 1;
+        max-width: 50% img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+</style>

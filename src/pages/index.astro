@@ -1,51 +1,37 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import InteractableCard from "../components/InteractableCard.astro";
-import InfoCard from "../components/InfoCard.astro";
-import Button from "../components/Button.astro";
-import NavigationBar from "../components/NavigationBar.astro";
+import Layout from "@layouts/Layout.astro";
+import InteractableCard from "@components/InteractableCard.astro";
+import InfoCard from "@components/InfoCard.astro";
+import NavigationBar from "@components/NavigationBar.astro";
 
-/*
-<li class="top-bar glass">
-                <a href="/">Home HOME HOME HOME HOME</a>
-            </li>*/
+import { Button, Hero, Header } from "@components";
+
+import "@styles/launch.scss";
+
+import Grid from "@components/Grid.astro";
 ---
 
 <Layout title="Keyflow">
     <main>
-        <div>
-            <NavigationBar />
-        </div>
-        <!--<p class="instructions">
-            Celebrate the Keyflow launch with <strong>15%</strong> off. Use code
-            <code>RELEASE15</code> at checkout and streamline authentication for
-            your applications. Limited time only.
-        </p>-->
         <p class="instructions">
-            Under development. Releasing <bold>very</bold> soon.
+            Celebrate the Keyflow launch with <strong>15%</strong> off. Use code
+            <code class="inline">RELEASE15</code> at checkout and streamline authentication
+            for your applications. Limited time only.
         </p>
-        <div class="hero-content">
+
+        <Header>
             <h1>
-                The <span class="text-gradient">Simplest</span> Way to Secure Your
-                Applications
+                The <span class="gradient">Simplest</span> Way to Secure Your Applications
             </h1>
-            <p style="color:gray">
-                Security shouldn't be a hassle. <span class="text-gradient"
-                    >Simplify</span
-                > your authentication with Keyflow.
+            <p>
+                Security shouldn't be a hassle. <span class="gradient">Simplify</span> your authentication with Keyflow.
             </p>
-            <div>
-                <Button
-                    glows={true}
-                    text="Try Keyflow for free →"
-                    color="#007bff"
-                />
-            </div>
-        </div>
+            <Button text="Try Keyflow for free →"/>
+        </Header>
 
         <div>
             <h2>API Reference & Examples</h2>
-            <ul role="list" class="link-card-grid">
+            <Grid cols="2" cols_wrap="1" minHeight="120px">
                 <InteractableCard
                     href="/docs"
                     title="Documentation"
@@ -56,237 +42,52 @@ import NavigationBar from "../components/NavigationBar.astro";
                     title="Examples"
                     body="Integrations to enhance your workflow."
                 />
-            </ul>
+            </Grid>
         </div>
 
-        <div class="container">
-            <div class="image-container">
-                <img src="/window.svg" alt="Keyflow" />
-            </div>
-            <div class="text-container">
-                <h1>
-                    Safeguard Your Applications with <span class="text-gradient"
-                        >Effortless</span
-                    > Authentication
-                </h1>
-                <p style="color:gray">
-                    Keyflow simplifies the authentication process, ensuring the
-                    security of your applications without the hassle.
-                </p>
-            </div>
-        </div>
+        <Hero image="/window.svg" imgPos="right">
+            <h1>
+                Safeguard Your Applications with <span class="gradient"
+                    >Effortless</span
+                >
+                Authentication
+            </h1>
+            <p>
+                Keyflow simplifies the authentication process, ensuring the
+                security of your applications without the hassle.
+            </p>
+        </Hero>
 
-        <div class="container">
-            <div class="text-container">
-                <h1>
-                    Create Login Forms with <span class="text-gradient"
-                        >Ease</span
-                    > and <span class="text-gradient">Efficiency</span>
-                </h1>
-                <p style="color:gray">
-                    Keyflow provides a seamless and secure user experience,
-                    signature checks, ensuring efficiency in every step.
-                </p>
-            </div>
-            <div class="image-container">
-                <img src="/login_form.svg" alt="Keyflow" />
-            </div>
-        </div>
+        <Hero image="/login_form.svg">
+            <h1>
+                Create Login Forms with <span class="gradient">Ease</span>
+                and <span class="gradient">Efficiency</span>
+            </h1>
+            <p>
+                Keyflow provides a seamless and secure user experience,
+                signature checks, ensuring efficiency in every step.
+            </p>
+        </Hero>
 
         <div>
-            <h2>Why Keyflow?</h2>
-            <ul role="list" class="info-card-grid">
+            <h2>Why Choose Keyflow?</h2>
+            <Grid cols="3" cols_wrap="1" maxHeight="450px">
                 <InfoCard
                     image="/icon_shield.svg"
                     title="Privacy first"
-                    body="Keep your data private and secure with Keyflow's robust security measures."
+                    body="We maintain the privacy and security of our consumers through robust security measures."
                 />
                 <InfoCard
                     image="/placeholder.webp"
                     title="Seamless integration"
-                    body="Connect Keyflow with your favorite tools to create a unified workflow."
+                    body="Creators can connect Keyflow with their favorite utilities to develop in a unified workflow."
                 />
                 <InfoCard
                     image="/placeholder.webp"
                     title="Personalized Experience"
-                    body="Customize Keyflow to fit your needs. Create a workflow that works for you."
+                    body="Administrators can customize Keyflow to fit their needs, creating a unique experience."
                 />
-            </ul>
+            </Grid>
         </div>
     </main>
 </Layout>
-
-<style>
-    main {
-        margin: auto;
-        padding: 1rem;
-        width: 800px;
-        max-width: calc(100% - 2rem);
-        color: rgb(248, 248, 252);
-        font-size: 20px;
-        line-height: 1.6;
-    }
-
-    main > * {
-        margin-top: 10rem;
-    }
-    .astro-a {
-        position: absolute;
-        top: -32px;
-        left: 50%;
-        transform: translatex(-50%);
-        width: 220px;
-        height: auto;
-        z-index: -1;
-    }
-    h1 {
-        font-size: 4rem;
-        font-weight: 700;
-        line-height: 1;
-        text-align: center;
-        margin-bottom: 0;
-    }
-
-    .top-bar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 999;
-        height: 55px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 10px;
-    }
-
-    .top-bar > a {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        border-radius: 8px;
-        min-width: 60px; /* Set minimum width */
-        height: 20px; /* Set button height */
-        background-color: transparent !important;
-        border: 1px solid rgba(255, 255, 255, 0.16);
-        color: white;
-        text-align: center;
-        /*box-shadow: 1px 1px 1px 1px #1f1d1d;*/
-        padding: 0.5rem 1rem; /* Adjust padding as needed */
-        white-space: nowrap; /* Prevent text wrapping within button */
-        overflow: hidden; /* Hide overflowing text */
-        text-overflow: ellipsis; /* Add ellipsis for long text */
-        text-decoration: none;
-    }
-
-    .glass {
-        background-color: linear-gradient(
-            135deg,
-            rgba(255, 255, 255, 0.1),
-            rgba(255, 255, 255, 0.1)
-        );
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Increase shadow size and blur for more depth */
-        border: 1px solid rgba(255, 255, 255, 0.16);
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Increase text shadow size for better contrast */
-    }
-
-    .hero {
-        background-color: rgb(var(--background));
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 0px;
-    }
-    .color {
-        height: 1000px;
-        width: 1000px;
-        background-image: radial-gradient(closest-side, rgba(255, 255, 50, 1));
-        position: absolute;
-        top: -570px;
-        left: 15%;
-    }
-    .hero-content {
-        width: 100%;
-        text-align: center;
-    }
-    .container {
-        display: flex;
-        align-items: center; /* Align items vertically */
-        justify-content: center; /* Center items horizontally */
-        margin-top: 4rem; /* Adjust margin as needed */
-    }
-
-    .image-container {
-        flex: 1; /* Let the image container grow to fill the available space */
-        max-width: 50%; /* Limit the width of the image container */
-    }
-
-    .image-container img {
-        max-width: 100%; /* Ensure the image doesn't exceed the container's width */
-        height: auto;
-    }
-
-    .text-container {
-        flex: 1; /* Let the text container grow to fill the available space */
-        padding: 0 20px; /* Adjust padding as needed */
-        text-align: center;
-    }
-
-    .text-container h1 {
-        font-size: 2em;
-        margin: 0;
-    }
-
-    .text-container .highlight {
-        color: #00aaff;
-    }
-
-    .text-container p {
-        font-size: 1.2em;
-        margin-top: 10px;
-    }
-
-    .instructions {
-        margin-bottom: 2rem;
-        border: 1px solid rgba(var(--accent-light), 25%);
-        background: linear-gradient(
-            rgba(var(--accent-dark), 66%),
-            rgba(var(--accent-dark), 33%)
-        );
-        padding: 1rem;
-        border-radius: 8px;
-    }
-    .instructions code {
-        font-size: 0.8em;
-        font-weight: bold;
-        background: rgba(var(--accent-light), 12%);
-        color: rgb(var(--accent-light));
-        border-radius: 4px;
-        padding: 0.3em 0.4em;
-    }
-    .instructions strong {
-        color: rgb(var(--accent-light));
-    }
-    .info-card-grid {
-        display: flex;
-        grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-        gap: 1rem;
-        padding: 0;
-    }
-    .link-card-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-        gap: 1rem;
-        padding: 0;
-    }
-    .button-grid {
-        display: flex;
-        grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-        gap: 1rem;
-        padding: 0;
-        justify-content: center;
-        align-items: center;
-    }
-</style>
